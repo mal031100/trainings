@@ -115,11 +115,14 @@ button.create-btn {
 }
 
 /* trang welcome */
-#wel{
+/* #wel{
     position: fixed;
     top: 0;right: 0;left: 0;bottom: 0;
     padding: 3%;
 }
 #wel.come.mal{
+    display: none;
+} */
+#login{
     display: none;
 }

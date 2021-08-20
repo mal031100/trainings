@@ -16,16 +16,16 @@ register.addEventListener('click',showregis);
 login.addEventListener('click', hideregis);
 
 // welcome
-const loginwel = document.querySelector('.js-login-wel')
-const wel = document.querySelector('.js-out')
-const home = document.querySelector('#wel')
+// const loginwel = document.querySelector('.js-login-wel')
+// const wel = document.querySelector('.js-out')
+// const home = document.querySelector('#wel')
 
-function showwel(){
-    home.classList.remove('mal')
-}
-function hidewel(){
-    home.classList.add('mal')
-}
+// function showwel(){
+//     home.classList.remove('mal')
+// }
+// function hidewel(){
+//     home.classList.add('mal')
+// }
 
-loginwel.addEventListener('click',showwel);
-wel.addEventListener('click',hidewel);
+// loginwel.addEventListener('click',showwel);
+// wel.addEventListener('click',hidewel);
