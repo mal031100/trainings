@@ -1,18 +1,18 @@
-// var objPeople = [
-// 	{ // Object @ 0 index
-// 		account: "nguyen dac hoang lam",
-// 		password: "lam"
-// 	},
-// 	{ // Object @ 1 index
-// 		account: "lam",
-// 		password: "mal"
-// 	},
-// 	{ // Object @ 2 index
-// 		account: "ndhl",
-// 		password: "lam"
-// 	}
+var objPeople = [
+	// { // Object @ 0 index
+	// 	account: "nguyen dac hoang lam",
+	// 	password: "lam"
+	// },
+	{ // Object @ 1 index
+		account: "lam",
+		password: "mal"
+	}
+	// { // Object @ 2 index
+	// 	account: "ndhl",
+	// 	password: "lam"
+	// }
 
-// ]
+]
 
 // function getInfo() {
 // 	var account = document.getElementById('acc').value
@@ -33,26 +33,26 @@
 // 	alert("incorrect username or password")
 // }
 
-var id, password, inforname = new Array();
-var account =  new Array();
-id = ['lam','ndhl'];
-password = ['aaa','aaa'];
-inforname = ["hoang lam", "nguyen dac hoang lam"];
+// var id, password, inforname = new Array();
+// var account =  new Array();
+// id = ['lam','ndhl'];
+// password = ['aaa','aaa'];
+// inforname = ["hoang lam", "nguyen dac hoang lam"];
 
 var i = 0;
 var success = -1;
  
 function getInfo(){
-    for (i = 0; i< id.length; i++){
-    if ((document.getElementById("acc").value == id[i]) && (document.getElementById("pass").value == password[i])) {
+    for (i = 0; i< objPeople.length; i++){
+    if ((document.getElementById("acc").value == objPeople[i].account) && (document.getElementById("pass").value == objPeople[i].password)) {
         document.getElementById("main").style.display = 'none';
         document.getElementById("information").style.display = 'block';
         document.getElementById("logout").style.display= 'block';
         // console.log(loginaccount);
         // console.log(information);
-        alert("login"+ " - " + inforname[i]);
+        alert("login"+ " - " + objPeople[i].account);
         success=i;
-        prname = inforname[i];
+        prname = objPeople[i].account;
         document.getElementById("inforname").innerHTML="welcome"+ " - " + prname;
         return
         } else if((document.getElementById("acc").value == '') || (document.getElementById("pass").value == '')) {
@@ -70,4 +70,28 @@ function logout() {
     document.getElementById("logout").style.display = 'none';
 	document.getElementById("information").style.display = 'none';
     document.getElementById("ndhl").reset();
+}
+
+
+//dang ki
+function registerUser(){
+    var registerUser = document.getElementById("accregis").value
+    var registerEmail = document.getElementById("emailregis").value
+    var registerPassword = document.getElementById("passregis").value
+    var newUser = {
+        account: registerUser,
+        email: registerEmail,
+        password: registerPassword
+    }
+    for (i = 0; i < objPeople.length; i++) {
+        if(registerUser == objPeople[i].account){
+            alert("that username is already use, please choose another")
+            return
+        } else if(registerPassword.length<8){
+            alert("password is too short, include 8 or more characters")
+        }
+
+    }
+    objPeople.push(newUser);
+    console.log(objPeople)
 }
