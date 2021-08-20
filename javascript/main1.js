@@ -14,6 +14,21 @@ var objPeople = [
 
 ]
 
+// function getInfo() {
+// 	var account = document.getElementById('acc').value
+// 	var password = document.getElementById('pass').value
+
+// 	for(var i = 0; i < objPeople.length; i++) {
+// 		// check is user input matches account and password of a current index of the objPeople array
+// 		if(account == objPeople[i].account && password == objPeople[i].password) {
+// 			alert(  "WELCOME"+ " " + account )
+// 			// stop the function if this is found to be true
+// 			return
+// 		}
+// 	}
+// 	alert("incorrect username or password")
+// }
+
 function getInfo() {
 	var account = document.getElementById('acc').value
 	var password = document.getElementById('pass').value
@@ -24,9 +39,11 @@ function getInfo() {
 			alert(  "WELCOME"+ " " + account )
 			// stop the function if this is found to be true
 			return
+		} else if(account == '' && password == ''){
+			alert('please enter account password')
+			
+			return
 		}
 	}
 	alert("incorrect username or password")
 }
-
-
