@@ -1,4 +1,4 @@
-// đăng nhập đăng xuất
+// đăng nhập đăng ki
 const login = document.querySelector('.js-login')
 const register = document.querySelector('.js-regis')
 const apc = document.querySelector('#register')
