@@ -49,16 +49,16 @@ body{
     font-size: 26px;
     background: linear-gradient(to bottom right, var(--bg1), var(--bg5));
 }
-.account {
+.username {
     margin-right: -10px;
 }
-input#acc,
+input#user,
 input#pass {
     padding: 5px;
     margin: 5px;
     font-size: 20px;
 }
-#main-login .login-btn {
+#login-btn {
     padding: 10px 15px;
     font-size: 20px;
     background:linear-gradient(to top left, var(--bg1), var(--bg3));
@@ -67,7 +67,7 @@ input#pass {
     cursor: pointer;
     /* color: #fff; */
 }
-#main-login .login-btn:hover{
+#login-btn:hover{
     opacity: 0.6;
 }
 /* đăng kí */
@@ -75,7 +75,7 @@ input#pass {
     position: fixed;
     top: 0;
     right: 0;
-    left: 0;
+    left: 0;    
     bottom: 0;
     /* background: rgba(0, 0, 0, 0.4); */
     padding: 3%;  
@@ -92,20 +92,20 @@ input#pass {
     font-size: 24px;
     background: linear-gradient(to bottom right, var(--bg2), var(--bg6));
 }
-input#accregis,
+input#userregis,
 input#emailregis,
 input#passregis {
     padding: 5px;
     margin: 5px;
     font-size: 18px;
 }
-input#accregis {
+input#userregis {
     margin-right: -10px;
 }
 input#emailregis {
     margin-right: -48px;
 }
-button.create-btn {
+#create-btn {
     font-size: 20px;
     padding: 10px 15px;
     background: linear-gradient(to top left, var(--bg1), var(--bg4));

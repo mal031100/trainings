@@ -4,7 +4,7 @@ var objPeople = [
 	// 	password: "lam"
 	// },
 	{ // Object @ 1 index
-		account: "lam",
+		username: "lam",
 		password: "mal"
 	}
 	// { // Object @ 2 index
@@ -43,12 +43,12 @@ var i = 0;
 // var success = -1;
  
 function getInfo(){
-   var acc = document.getElementById("acc").value
+   var user = document.getElementById("user").value
    var pass = document.getElementById("pass").value
     
     for (i = 0; i< objPeople.length; i++){
         // console.log(i)
-    if ((acc == objPeople[i].account) && (pass == objPeople[i].password)) {
+    if ((user == objPeople[i].account) && (pass == objPeople[i].password)) {
         document.getElementById("main").style.display = 'none';
         document.getElementById("information").style.display = 'block';
         document.getElementById("logout").style.display= 'block';

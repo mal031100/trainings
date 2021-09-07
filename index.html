@@ -9,7 +9,8 @@
     <!-- <link rel="stylesheet" href="./CSS/welcome.css"> -->
     <title>Document</title>
     <script src="./javascript/jquery.js"></script>
-    
+    <script src="./javascript/jquery-ui-1.12.1/external/jquery/jquery.js"></script>
+    <script src="./javascript/jquery-ui-1.12.1/jquery-ui.min.js"></script>
 </head>
 <body id="ndhl">
     
@@ -19,15 +20,15 @@
             <button class="register js-regis">register</button>
         </div>
         <div id="main-login">
-            <div class="account ">
-                <label>account</label>
-                <input type="text" id="acc" name="account" placeholder="Account"  required >
+            <div class="username">
+                <label>username</label>
+                <input type="text" id="user" name="username" placeholder="Username"  required >
             </div>
             <div class="password ">
                 <label >password</label>
                 <input type="password" id="pass" name="password" placeholder="Password"  required >
             </div>
-            <button onclick="getInfo()" class="login-btn js-login-wel">login</button>
+            <button  id="login-btn">login</button>
             
         </div>
        
@@ -38,9 +39,9 @@
             <button class="register ">register</button>
         </div>
         <div id="main-register">
-            <div class="account-register ">
-                <label>account</label>
-                <input type="text" name="account" placeholder="Account" id="accregis" required >
+            <div class="username-register ">
+                <label>username</label>
+                <input type="text" name="username" placeholder="Username" id="userregis" required >
             
             </div>
             <div class="email ">
@@ -53,7 +54,7 @@
                 <input type="password" name="password" placeholder="Password" id="passregis" required >
                 
             </div>
-            <button onclick="registerUser()" class="create-btn">create</button>
+            <button  id="create-btn">create</button>
         </div>
     </div>
 
@@ -63,11 +64,12 @@
     <button id="logout" onclick="logout()" class="out js-out">out</button> -->
         
     <div class="wel">
-        <div id="information" class="container"></div>
+        <div id="infor" class="trangchu"></div>
         <p id="inforname"></p>
-        <button id="logout" onclick="logout()">logout</button>
+        <button id="logout" >logout</button>
     </div>
     <script src="./javascript/main.js"></script>
-    <script src="./javascript/main1.js"></script>
+    <!-- <script src="./javascript/main1.js"></script> -->
+    <script src="./javascript/main2.js"></script>
 </body>
 </html>
