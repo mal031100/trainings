@@ -8,10 +8,18 @@
     margin: 0;
     box-sizing: border-box;
 }
-.out {
+#inforname{
+    color: chartreuse;
+    font-size: 50px;
+    text-align: center;
+    padding: 10%;
+   
+}
+
+/* .wel {
     border: none;
-    top: 0;
-    right: 3%;
+    top: 50%;
+    right: 50%;
     position: absolute;
     padding: 5px 20px;
     font-size: 14px;
@@ -32,5 +40,5 @@
     font-size: 56px;
     background: linear-gradient(to bottom right, var(--bg1), var(--bg2) );
     color: cornflowerblue;
-}
+} */
 

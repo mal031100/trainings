@@ -10,21 +10,20 @@
 *{
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    box-sizing: border-box ;
 }
 body{
     padding: 3%;
-     background: antiquewhite ;
-}
+    background: antiquewhite     ;
+}   
 #main{
     width: 100%;
 }
 #header{
     display: flex;
-
 }
- .login,
- .register{
+.login,
+.register{
     width: 50%;
     text-align: center;
     padding: 16px;
@@ -49,9 +48,9 @@ body{
     font-size: 26px;
     background: linear-gradient(to bottom right, var(--bg1), var(--bg5));
 }
-.username {
-    margin-right: -10px;
-}
+/* .username {
+    margin-right: -5px;
+} */
 input#user,
 input#pass {
     padding: 5px;
@@ -103,13 +102,17 @@ input#userregis {
     margin-right: -10px;
 }
 input#emailregis {
-    margin-right: -48px;
+    margin-right: -66px;
+}
+input#passregis {
+    margin-right: -12px;
 }
 #create-btn {
     font-size: 20px;
     padding: 10px 15px;
     background: linear-gradient(to top left, var(--bg1), var(--bg4));
     margin-left: -12px;
+    margin-top: 16px;
     cursor: pointer;
     /* color: rgb(255, 255, 255); */
 }
@@ -124,5 +127,8 @@ input#emailregis {
     display: none;
 } */
 #login{
+    display: none;
+}
+#logout{
     display: none;
 }
