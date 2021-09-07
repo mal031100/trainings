@@ -25,19 +25,80 @@ $(document).ready(function(){
         } 
     });
 
+    $("#form").validate({
+        rules: {
+            username: {
+                required: true,
+                maxlength: 15
+            },
+            password: {
+                required: true,
+                minlength: 5
+            }
+        },
+        messages: {
+            username: {
+                required: "Bắt buộc nhập username",
+                maxlength: "Hãy nhập tối đa 15 ký tự",
+                minlength: "Tên quá ngắn"
+            },
+            password: {
+                required: "Bắt buộc nhập password",
+                minlength: "Hãy nhập ít nhất 5 ký tự"
+            }
+        }
+    });
+
+    $("#form2").validate({
+        rules: {
+            newUsername: {
+                required: true,
+                maxlength: 15,
+                minlength: 3
+            },
+            newEmail: {
+                required: true,
+                email: true
+            },
+            newPassword: {
+                required: true,
+                minlength: 5
+            }
+            
+        },
+        messages: {
+            newUsername: {
+                required: "Không để trống",
+                maxlength: "Quá dài rồi"
+            },
+            newEmail: {
+                required: "không để trống"
+            },
+            newPassword: {
+                required: "Không để trống",
+                minlength: "Mật khẩu của bạn quá ngắn"
+            }
+           
+        }
+    });
+
     //Register-js
     $('#create-btn').click(function(){
         var newUsername = $('#userregis').val();
         var newEmail = $('#emailregis').val();
         var newPassword = $('#passregis').val();
-        var newUser = {
-            username: newUsername,
-            password: newPassword,
-            newEmail: newEmail
+        if (newUsername == '' || newEmail == ''||  newPassword == '' ) {
+            alert("Nhập thông tin đầy đủ");
+        } else {
+            var newUser = {
+                username: newUsername,
+                email: newEmail,
+                password: newPassword
+            }
+            objPeople.push(newUser);
+            console.log(objPeople);
+            alert("success register");
         }
-        objPeople.push(newUser);
-        console.log(objPeople);
-        alert("success register");
     });
     // $("#main-login").validate({
     //     rules: {

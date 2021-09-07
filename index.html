@@ -11,15 +11,18 @@
     <script src="./javascript/jquery.js"></script>
     <script src="./javascript/jquery-ui-1.12.1/external/jquery/jquery.js"></script>
     <script src="./javascript/jquery-ui-1.12.1/jquery-ui.min.js"></script>
-</head>
+    <script src="./javascript/jquery.validate.js"></script>
+   </head>
 <body id="ndhl">
     
     <div id="main">
+        
         <div id="header">
             <button class="login ">login</button>
             <button class="register js-regis">register</button>
         </div>
         <div id="main-login">
+        <form action="#" id="form">
             <div class="username">
                 <label>username</label>
                 <input type="text" id="user" name="username" placeholder="Username"  required >
@@ -29,16 +32,21 @@
                 <input type="password" id="pass" name="password" placeholder="Password"  required >
             </div>
             <button  id="login-btn">login</button>
-            
+        </form>
         </div>
+    
     </div>
+   
 
+    
     <div id="register" class="apc open" >
+        
         <div id="header">
             <button class="login js-login">login</button>
             <button class="register ">register</button>
         </div>
         <div id="main-register">
+        <form action="#" id="form2">
             <div class="username-register ">
                 <label>username</label>
                 <input type="text" name="username" placeholder="Username" id="userregis" required >
@@ -52,7 +60,9 @@
                 <input type="password" name="password" placeholder="Password" id="passregis" required >
             </div>
             <button  id="create-btn">create</button>
+        </form>
         </div>
+    
     </div>
 
     
@@ -64,8 +74,9 @@
         <button id="logout" >logout</button>
         <div id="infor" class="trangchu"></div>
         <p id="inforname"></p>
-        
     </div>
+
+
     <script src="./javascript/main.js"></script>
     <!-- <script src="./javascript/main1.js"></script> -->
     <script src="./javascript/main2.js"></script>
