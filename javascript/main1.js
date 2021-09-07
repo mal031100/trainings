@@ -40,27 +40,31 @@ var objPeople = [
 // inforname = ["hoang lam", "nguyen dac hoang lam"];
 
 var i = 0;
-var success = -1;
+// var success = -1;
  
 function getInfo(){
+   var acc = document.getElementById("acc").value
+   var pass = document.getElementById("pass").value
+    
     for (i = 0; i< objPeople.length; i++){
-    if ((document.getElementById("acc").value == objPeople[i].account) && (document.getElementById("pass").value == objPeople[i].password)) {
+        // console.log(i)
+    if ((acc == objPeople[i].account) && (pass == objPeople[i].password)) {
         document.getElementById("main").style.display = 'none';
         document.getElementById("information").style.display = 'block';
         document.getElementById("logout").style.display= 'block';
         // console.log(loginaccount);
         // console.log(information);
-        alert("login"+ " - " + objPeople[i].account);
+        // alert("login"+ " - " + objPeople[i].account);
         success=i;
         prname = objPeople[i].account;
         document.getElementById("inforname").innerHTML="welcome"+ " - " + prname;
         return
-        } else if((document.getElementById("acc").value == '') || (document.getElementById("pass").value == '')) {
+        } else if((acc == '') || (pass == '')) {
             alert('không được để chống')
             return
         } else {
             alert('tài khoản hoặc mật khẩu không chính xác')
-            return
+            
         }
     }
 }
@@ -69,15 +73,15 @@ function logout() {
     document.getElementById("inforname").style.display = 'none';
     document.getElementById("logout").style.display = 'none';
 	document.getElementById("information").style.display = 'none';
-    document.getElementById("ndhl").reset();
+    // document.getElementById("ndhl").reset();
 }
 
 
 //dang ki
 function registerUser(){
-    var registerUser = document.getElementById("accregis").value
-    var registerEmail = document.getElementById("emailregis").value
-    var registerPassword = document.getElementById("passregis").value
+    var registerUser = document.getElementById("accregis").value.trim()
+    var registerEmail = document.getElementById("emailregis").value.trim()
+    var registerPassword = document.getElementById("passregis").value.trim()
     var newUser = {
         account: registerUser,
         email: registerEmail,
@@ -87,8 +91,9 @@ function registerUser(){
         if(registerUser == objPeople[i].account){
             alert("that username is already use, please choose another")
             return
-        } else if(registerPassword.length<8){
-            alert("password is too short, include 8 or more characters")
+        } else if(registerPassword.length<6){
+            alert("password is too short, include 6 or more characters")
+            return
         }
 
     }

@@ -15,6 +15,18 @@ register.addEventListener('click',showregis);
 
 login.addEventListener('click', hideregis);
 
+// $document.$ready(function(){
+//     $("Button").click(function(){
+//         $("#main'").toggle();
+//     });
+// });
+// $document.$ready(function(){
+//     $("Button").click(function(){
+//         $("#register'").toggle();
+//     });
+// });
+
+
 // welcome
 // const loginwel = document.querySelector('.js-login-wel')
 // const wel = document.querySelector('.js-out')
