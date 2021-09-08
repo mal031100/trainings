@@ -6,30 +6,75 @@ var objPeople = [
 	}
 ]
 
-$(document).ready(function(){
-    // Login- js
-	$('#login-btn').click(function(){
+$(document).ready(function() {
+    $('#login-btn').click(function() {
         var username = $('#user').val();
         var password = $('#pass').val();
         var success = -1;
-        for (i = 0; i< objPeople.length; i++){
-            if(username == objPeople[i].username && password == objPeople[i].password) {
-                $('#main').css('display','none');
-                $('#infor').css('display','block');
-                $('#logout').css('display','block');
-                alert("Welcome " + username);
-                success=[i];
-                prname = username;
-                $('#inforname').html('Welcome ' + prname);
+        $("#form").submit(function(event) {
+            event.preventDefault();
+        });
+        for (i = 0; i < objPeople.length; i++) {
+            if (username == objPeople[i].username && password == objPeople[i].password) {
+                $('#main').css('display', 'none');
+                $('#infor').css('display', 'block');
+                $('#logout').css('display', 'block');
+                $('#inforname').html('welcome -' + username);
+                success = [i];
+            } else if (username == '' || password == '') {
+                //
+            } else {
+                myText = $("#error-message").text("Tài khoản hoặc mật khẩu không đúng");
+                $('#error-message').css('display', 'block');
+                $('#success-message').css('display', 'none');
             }
-        } 
-    });
+        }
+});
+    $('#create-btn').click(function() {
+        var newUsername = $('#userregis').val();
+        var newPassword = $('#passregis').val();
+        var newEmail = $('#emailregis').val();
+        $("#form2").submit(function(event) {
+            event.preventDefault();
+        });
+        for (i = 0; i < objPeople.length; i++) {
+            if (newUsername == '' || newPassword == '' || newEmail == '') {
+                console.log("Không được để trống");
+            } else if (newUsername == objPeople[i].username) {
+                myText = $("#error-message").text("Tài khoản đã tồn tại");
+                $('#error-message').css('display', 'block');
+                $('#success-message').css('display', 'none');
+                return;
+            
+            } else {
+                var newUser = {
+                    username: newUsername,
+                    email: newEmail,
+                    password: newPassword
+                }
+                objPeople.push(newUser);
+                console.log(objPeople);
+                myText = $("#success-message").text("Đăng kí thành công");
+                $('#error-message').css('display', 'none');
+                $('#success-message').css('display', 'block');
+                return;
+            }
 
+        }
+    });
+    $('#logout').click(function() {
+        $('#main').css('display', 'block');
+        $('#infor').css('display', 'none');
+        $('#logout').css('display', 'none');
+        $('#inforname').css('display', 'none');
+        // $('#form-inner').trigger(reset);
+    });
     $("#form").validate({
         rules: {
             username: {
                 required: true,
-                maxlength: 15
+                maxlength: 15,
+                minlength: 5
             },
             password: {
                 required: true,
@@ -48,23 +93,21 @@ $(document).ready(function(){
             }
         }
     });
-
     $("#form2").validate({
         rules: {
-            newUsername: {
+            username: {
                 required: true,
-                maxlength: 15,
-                minlength: 3
+                maxlength: 10,
+                minlength: 5
             },
-            newEmail: {
+            email: {
                 required: true,
                 email: true
             },
-            newPassword: {
+            password: {
                 required: true,
                 minlength: 5
-            }
-            
+            },
         },
         messages: {
             newUsername: {
@@ -72,61 +115,13 @@ $(document).ready(function(){
                 maxlength: "Quá dài rồi"
             },
             newEmail: {
-                required: "không để trống"
+                required: "không để trống",
+                email: "Email chưa đúng định dạng"
             },
             newPassword: {
                 required: "Không để trống",
                 minlength: "Mật khẩu của bạn quá ngắn"
             }
-           
         }
-    });
-
-    //Register-js
-    $('#create-btn').click(function(){
-        var newUsername = $('#userregis').val();
-        var newEmail = $('#emailregis').val();
-        var newPassword = $('#passregis').val();
-        if (newUsername == '' || newEmail == ''||  newPassword == '' ) {
-            alert("Nhập thông tin đầy đủ");
-        } else {
-            var newUser = {
-                username: newUsername,
-                email: newEmail,
-                password: newPassword
-            }
-            objPeople.push(newUser);
-            console.log(objPeople);
-            alert("success register");
-        }
-    });
-    // $("#main-login").validate({
-    //     rules: {
-    //     	"username": {
-    //     		required: true,
-    //     		maxlength: 15
-    //     	},
-    //     	"password": {
-    //     		required: true,
-    //     		minlength: 8
-    //     	}
-    //     },
-    //     messages: {
-    //         "username": {
-    //     		required: "Bắt buộc nhập username",
-    //     		maxlength: "Hãy nhập tối đa 15 ký tự"
-    //     	},
-    //     	"password": {
-    //     		required: "Bắt buộc nhập password",
-    //     		minlength: "Hãy nhập ít nhất 8 ký tự"
-    //     	}
-    //     }
-    // });
-    $('#logout').click(function(){
-        $('#main').css('display','block');
-        $('#infor').css('display','none');
-        $('#logout').css('display','none');
-        $('#inforname').css('display','none');
-        // $('#formlogin').trigger(reset);
     });
 });
