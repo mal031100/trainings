@@ -48,6 +48,22 @@ $(document).ready(function() {
             //     $('#success-message').css('display', 'none');
             //     return;
             
+            } else if (newUsername.length < 5 ) {
+                myText = $("#error-message").text("Tài khoản quá ngắn!");
+                $('#error-message').css('display', 'block');
+                $('#success-message').css('display', 'none');
+            } else if(newUsername.length > 15 ){
+                myText = $("#error-message").text("Tài khoản quá dài!");
+                $('#error-message').css('display', 'block');
+                $('#success-message').css('display', 'none');
+            } else if(newPassword.length < 5){
+                myText = $("#error-message").text("mật khẩu phải nhiều hơn 5 kí tự!");
+                $('#error-message').css('display', 'block');
+                $('#success-message').css('display', 'none');
+            } else if (newEmail.indexOf("@") < 0 || newEmail.indexOf(".com") < 0) {
+                myText = $("#error-message").text("Email không đúng định dạng!!!");
+                $('#error-message').css('display', 'block');
+                $('#success-message').css('display', 'none');
             } else {
                 var newUser = {
                     username: newUsername,
