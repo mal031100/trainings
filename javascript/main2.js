@@ -19,14 +19,16 @@ $(document).ready(function() {
                 $('#main').css('display', 'none');
                 $('#infor').css('display', 'block');
                 $('#logout').css('display', 'block');
-                $('#inforname').html('welcome -' + username);
+                $('#error-message').css('display', 'none');
+                $('#inforname').html('welcome - ' + username);
                 success = [i];
             } else if (username == '' || password == '') {
-                //
+                
             } else {
                 myText = $("#error-message").text("Tài khoản hoặc mật khẩu không đúng");
                 $('#error-message').css('display', 'block');
                 $('#success-message').css('display', 'none');
+                // console.log("tài khoản hoặc mật khẩu không đúng")
             }
         }
 });
@@ -40,17 +42,25 @@ $(document).ready(function() {
         for (i = 0; i < objPeople.length; i++) {
             if (newUsername == '' || newPassword == '' || newEmail == '') {
                 console.log("Không được để trống");
-            } else if (newUsername == objPeople[i].username) {
-                myText = $("#error-message").text("Tài khoản đã tồn tại");
-                $('#error-message').css('display', 'block');
-                $('#success-message').css('display', 'none');
-                return;
+            // } else if (newUsername == objPeople[i].username) {
+            //     myText = $("#error-message").text("Tài khoản đã tồn tại");
+            //     $('#error-message').css('display', 'block');
+            //     $('#success-message').css('display', 'none');
+            //     return;
             
             } else {
                 var newUser = {
                     username: newUsername,
                     email: newEmail,
                     password: newPassword
+                }
+                for(i = 0 ; i < objPeople.length; i++){
+                    if (newUsername == objPeople[i].username) {
+                        myText = $("#error-message").text("Tài khoản đã tồn tại");
+                        $('#error-message').css('display', 'block');
+                        $('#success-message').css('display', 'none');
+                        return;
+                    }
                 }
                 objPeople.push(newUser);
                 console.log(objPeople);
@@ -67,6 +77,7 @@ $(document).ready(function() {
         $('#infor').css('display', 'none');
         $('#logout').css('display', 'none');
         $('#inforname').css('display', 'none');
+        $('#error-message').css('display', 'none');
         // $('#form-inner').trigger(reset);
     });
     $("#form").validate({
@@ -97,7 +108,7 @@ $(document).ready(function() {
         rules: {
             username: {
                 required: true,
-                maxlength: 10,
+                maxlength: 15,
                 minlength: 5
             },
             email: {
@@ -110,15 +121,15 @@ $(document).ready(function() {
             },
         },
         messages: {
-            newUsername: {
+            username: {
                 required: "Không để trống",
                 maxlength: "Quá dài rồi"
             },
-            newEmail: {
+            email: {
                 required: "không để trống",
                 email: "Email chưa đúng định dạng"
             },
-            newPassword: {
+            password: {
                 required: "Không để trống",
                 minlength: "Mật khẩu của bạn quá ngắn"
             }

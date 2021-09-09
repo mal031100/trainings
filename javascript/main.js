@@ -15,29 +15,24 @@ register.addEventListener('click',showregis);
 
 login.addEventListener('click', hideregis);
 
-// $document.$ready(function(){
-//     $("Button").click(function(){
-//         $("#main'").toggle();
-//     });
+// const loginText = document.querySelector("#ndhl .login");
+// const loginForm = document.querySelector("form.login");
+// const loginBtn = document.querySelector("label.login");
+// const signupBtn = document.querySelector("label.signup");
+// const signupLink = document.querySelector("form .signup-link a");
+// signupBtn.onclick = (() => {
+//     loginForm.style.marginLeft = "-50%";
+//     loginText.style.marginLeft = "-50%";
+//     $('#error-message').css('display', 'none');
+//     $('#success-message').css('display', 'none');
 // });
-// $document.$ready(function(){
-//     $("Button").click(function(){
-//         $("#register'").toggle();
-//     });
+// loginBtn.onclick = (() => {
+//     loginForm.style.marginLeft = "0%";
+//     loginText.style.marginLeft = "0%";
+//     $('#error-message').css('display', 'none');
+//     $('#success-message').css('display', 'none');
 // });
-
-
-// welcome
-// const loginwel = document.querySelector('.js-login-wel')
-// const wel = document.querySelector('.js-out')
-// const home = document.querySelector('#wel')
-
-// function showwel(){
-//     home.classList.remove('mal')
-// }
-// function hidewel(){
-//     home.classList.add('mal')
-// }
-
-// loginwel.addEventListener('click',showwel);
-// wel.addEventListener('click',hidewel);
+// signupLink.onclick = (() => {
+//     signupBtn.click();
+//     return false;
+// });
