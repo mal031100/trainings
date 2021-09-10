@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/style1.css">
+    <!-- <link rel="stylesheet" href="./CSS/welcome.css"> -->
+    <title>Document</title>
+    <script src="./javascript/jquery.js"></script>
+    <script src="./javascript/jquery-ui-1.12.1/external/jquery/jquery.js"></script>
+    <script src="./javascript/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script src="./javascript/jquery.validate.js"></script>
+   </head>
+<body id="ndhl">
+        
+    <div id="main">
+        <div id="header">
+            <button class="login ">login</button>
+            <button class="register js-regis">register</button>
+        </div>
+        <div id="main-login">
+        <form action="#" id="form">
+            <div class="username">
+                <label>username</label>
+                <input type="text" id="user" name="username" placeholder="Username"  required >
+            </div>
+            <div class="password ">
+                <label >password</label>
+                <input type="password" id="pass" name="password" placeholder="Password"  required >
+            </div>
+            
+            <button  id="login-btn">login</button>
+        </form>
+        </div>
+    </div>
+    
+    <div id="register" class="apc open" >
+        <div id="header">
+            <button class="login js-login">login</button>
+            <button class="register ">register</button>
+        </div>
+        <div id="main-register">
+        <form action="#" id="form2">
+            <div class="username-register ">
+                <label>username</label>
+                <input type="text" name="username" placeholder="Username" id="userregis" required >
+            </div>
+            <div class="email ">
+                <label>email</label> 
+                <input type="email" name="email" placeholder="Email" id="emailregis" required >
+            </div>
+            <div class="pass ">
+                <label >password</label>
+                <input type="password" name="password" placeholder="Password" id="passregis" required >
+            </div>
+           
+            <button  id="create-btn">create</button>
+        </form>
+        </div>
+    </div>
+    <div id="error-message"></div>
+    <div id="success-message"></div>
+    
+    <!-- <div id="wel" class="come mal"></div>
+    <p id="inforname"></p>
+    <button id="logout" onclick="logout()" class="out js-out">out</button> -->
+        
+    <div class="wel">
+        <button id="logout" >logout</button>
+        <div id="infor" class="trangchu"></div>
+        <p id="inforname"></p>
+    </div>
+
+
+    <script src="./javascript/main.js"></script>
+    <!-- <script src="./javascript/main1.js"></script> -->
+    <script src="./javascript/main2.js"></script>
+</body>
+</html>
